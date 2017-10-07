@@ -39,7 +39,10 @@ def global_alighnment(s1, s2):
     >>> global_alighnment("ACTGATTCA", "ACGCATCA")
     ('ACTG-ATTCA', 'AC-GCAT-CA')
     """
-    gap_penalty = -2
+    gap_penalty = -1
+
+    s1 = s1.upper()
+    s2 = s2.upper()
 
     if s1 is "":
         a_s1 = ''

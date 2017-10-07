@@ -17,8 +17,8 @@ def similarity(s1, s2):
 
     similarity_matrix = {'A': {'A': 2, 'C': -3, 'G': -3, 'T': -3},
                          'C': {'A': -3, 'C': 2, 'G': -3, 'T': -3},
-                         'G': {'A': -3, 'C': -3, 'G': 2, 'T': -3},
-                         'T': {'A': -3, 'C': -3, 'G': -3, 'T': 2}}
+                         'G': {'A': -3, 'C': -3, 'G': 2, 'T': -10},
+                         'T': {'A': -3, 'C': -3, 'G': -10, 'T': 2}}
 
     return similarity_matrix[s1][s2]
 
@@ -46,6 +46,9 @@ def global_alighnment(s1, s2, gap_penalty=-2 ):
     >>> global_alighnment("ACTGATTCA", "ACGCATCA", -2)
     ('ACTG-ATTCA', 'AC-GCAT-CA')
     """
+
+    s1 = s1.upper()
+    s2 = s2.upper()
 
     if s1 is "":
         a_s1 = ''
